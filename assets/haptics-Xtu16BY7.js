@@ -1,0 +1,1 @@
+function e(e=10){try{navigator.vibrate?.(e)}catch{}}export{e as t};

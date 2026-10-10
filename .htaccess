@@ -1,0 +1,11 @@
+# StockerTV is a single-page app: every address that isn't a real file opens index.html,
+# so /feed, /demo, /privacy and the others work when opened directly or refreshed.
+Options -MultiViews
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ index.html [QSA,L]
+
+# Videos: let browsers seek and start playing before the whole file arrives
+AddType video/mp4 .mp4
+AddType application/manifest+json .webmanifest
