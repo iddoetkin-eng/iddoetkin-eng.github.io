@@ -1,7 +1,11 @@
-# StockerTV is a single-page app: every address that isn't a real file opens index.html,
+# StockerTV is a single-page app. Each page has a pre-rendered file (feed.html, ...);
+# every other address that isn't a real file opens index.html,
 # so /feed, /demo, /privacy and the others work when opened directly or refreshed.
 Options -MultiViews
 RewriteEngine On
+# Pre-rendered pages: /feed is served from feed.html (readable without JavaScript)
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.+)$ $1.html [L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^ index.html [QSA,L]
