@@ -1,4 +1,6 @@
-/he    /he.html   200
+/he    /he/index.html   200
+/he/privacy    /he/privacy.html   200
+/he/accessibility    /he/accessibility.html   200
 /feed    /feed.html   200
 /demo    /demo.html   200
 /developers    /developers.html   200
